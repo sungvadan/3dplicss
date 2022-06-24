@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section>
+        <article class="fold">
+            <h2>Lapin crétin</h2>
+            <img src="image/lapin.png" alt="lapin crétin">
+        </article>
+    </section>
+    <script>
+        let image = document.querySelector('.fold img')
+        let divShadow = document.createElement('div')
+        divShadow.classList = 'shadow'
+
+        let imageTop = image.cloneNode(true)
+        let warpper = document.createElement('div')
+        warpper.classList = 'top'
+        const divTot = image.parentNode.insertBefore(warpper, image)
+        divTot.appendChild(imageTop)
+        divTot.appendChild(divShadow)
+
+
+        let imageBot = image.cloneNode(true)
+        warpper = document.createElement('div')
+        warpper.classList = 'bot'
+        const divBot = image.parentNode.insertBefore(warpper, image)
+        divBot.appendChild(imageBot)
+        divBot.appendChild(divShadow.cloneNode(true))
+
+        image.remove()
+
+
+    </script>
+    
+</body>
+</html>

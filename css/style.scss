@@ -1,0 +1,77 @@
+body {
+    background: #2e2e2e;
+}
+section{
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 175px;
+    height: 175px;
+    margin: 0 auto;
+    margin-top: -85px;
+}
+
+article {
+    position: relative;
+    width: 175px;
+    height: 175px;
+    transition: transform 3s ;
+    background-color: #191919;
+    box-shadow: O O O 1px rga(255,255,255,0.2);
+    border-radius: 5px;
+    h2 {
+        position: absolute;
+        left: 0px; right: 0px; bottom: 0px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        overflow: hidden;
+    }
+    .top {
+        img {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .shadow {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;  
+            box-shadow: inset 0px 1px rgba(255,255,255,0.6);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px; 
+        }
+    }
+    .bot {
+        bottom: 0;
+        top: 50%;
+        transform-origin: 50% 0;
+        transition: transform .5s cubic-bezier(.17,.67,.83,.67) ;
+        img {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-top: -50%;
+        }
+        .shadow {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0; 
+            opacity: 0;
+            transition: all .5s cubic-bezier(.17,.67,.83,.67) ;
+            background: -webkit-linear-gradient(top, rgba(0,0,0, 0.2), rgba(0,0,0,0));
+        }
+    }
+    &:hover .bot {
+        transform: perspective(700px) rotateX(65deg);
+        .shadow {
+            opacity: 1; 
+        }
+    }
+}
